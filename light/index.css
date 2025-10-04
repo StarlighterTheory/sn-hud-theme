@@ -1,0 +1,92 @@
+/* Solo-Leveling HUD — TK (Light) */
+/* Base: teal + magenta; Accents/ink: black + purple */
+
+:root{
+  /* palette tuned for light UI */
+  --ink:#0d0a1c;                 /* primary text */
+  --void-4:#f7fbfb;              /* app bg */
+  --void-3:#f0f5f5;              /* panels */
+  --void-2:#e9f3f3;              /* cards */
+  --void-1:#e2eded;              /* inputs / toolbar */
+  --muted:#4c4a66;               /* secondary text (purple-ish) */
+  --border:#c7d7d7;
+
+  --teal:#21e0c2;                /* base accent A */
+  --magenta:#ff3ea5;             /* base accent B */
+  --purple:#1b1033;              /* accent edge/ink */
+  --black:#0d0a1c;
+
+  --warning:#b86e00;
+  --success:#2a8f3a;
+  --danger:#c82b4f;
+
+  /* SN tokens */
+  --sn-stylekit-foreground-color: var(--ink);
+  --sn-stylekit-secondary-foreground-color: var(--muted);
+  --sn-stylekit-background-color: #ffffff;
+  --sn-stylekit-contrast-background-color: var(--void-2);
+  --sn-stylekit-contrast-foreground-color: var(--ink);
+  --sn-stylekit-border-color: var(--border);
+  --sn-stylekit-contrast-border-color: var(--border);
+  --sn-stylekit-paragraph-text-color: var(--ink);
+  --sn-stylekit-editor-background-color: #ffffff;
+  --sn-stylekit-accent-color: var(--teal);
+  --sn-stylekit-info-color: var(--magenta);
+  --sn-stylekit-success-color: var(--success);
+  --sn-stylekit-warning-color: var(--warning);
+  --sn-stylekit-danger-color: var(--danger);
+  --sn-desktop-titlebar-bg-color: var(--void-1);
+  --sn-desktop-titlebar-border-color: var(--border);
+  --sn-stylekit-scrollbar-thumb-color: #cfd8e3;
+}
+
+html, body, .app-root, .sn-root {
+  background: var(--void-4) !important;
+  color: var(--ink) !important;
+}
+
+#title-bar, .sn-title-bar, .window-controls,
+.pane, .component, .navigation-panel, .notes-panel,
+.editor-pane, .split, .split-view {
+  background: #ffffff !important;
+  border-color: var(--border) !important;
+}
+
+.items-column .list-item,
+.items-column .list-item:hover,
+.items-column .list-item.selected {
+  background: var(--void-2) !important;
+  border: 1px solid var(--border) !important;
+}
+.items-column .list-item.selected { border-left: 3px solid var(--teal) !important; }
+
+.editor, .container, .sheet, .card, .modal, .editor > .editor {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  border-color: var(--border) !important;
+}
+
+.toolbar, .menubar, .menu, .dropdown, .dropdown-menu, .context-menu {
+  background: var(--void-1) !important;
+  border-color: var(--border) !important;
+}
+
+.button, .sk-button, .btn, .tag, .pill, .label {
+  background: linear-gradient(96deg, var(--teal), var(--magenta)) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+.button:hover { filter: brightness(0.98); }
+
+/* Inputs */
+input, textarea, select, .editor .cm-editor, .cm-editor {
+  background: var(--void-3) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Sheets header */
+.secure-spreadsheet .k-spreadsheet .k-cell.k-header {
+  background: var(--void-1) !important;
+  color: var(--ink) !important;
+}
