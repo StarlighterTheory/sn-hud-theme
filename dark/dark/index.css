@@ -1,0 +1,103 @@
+/* Solo-Leveling HUD — TK (Dark) */
+/* Base: black + purple; Accents: teal + magenta */
+
+:root{
+  /* core palette (adjust to exact PDF values if needed) */
+  --ink:#ECEDFF;                 /* primary text on dark */
+  --void-4:#0d0a1c;              /* app & page background (near-black) */
+  --void-3:#151736;              /* panels */
+  --void-2:#1b1033;              /* cards / list rows hover */
+  --void-1:#211947;              /* inputs / toolbar bg */
+  --muted:#9aa0c3;               /* secondary text */
+  --border:#2a2752;              /* borders */
+  --magenta:#ff3ea5;             /* accent 1 */
+  --teal:#21e0c2;                /* accent 2 */
+  --warning:#ffd36a;
+  --success:#2bd039;
+  --danger:#ff6b86;
+
+  /* Standard Notes semantic tokens */
+  --sn-stylekit-foreground-color: var(--ink);
+  --sn-stylekit-secondary-foreground-color: var(--muted);
+  --sn-stylekit-background-color: var(--void-1);
+  --sn-stylekit-contrast-background-color: var(--void-2);
+  --sn-stylekit-contrast-foreground-color: var(--ink);
+  --sn-stylekit-border-color: var(--border);
+  --sn-stylekit-contrast-border-color: var(--border);
+  --sn-stylekit-paragraph-text-color: var(--ink);
+  --sn-stylekit-editor-background-color: var(--void-2);
+  --sn-stylekit-accent-color: var(--magenta);
+  --sn-stylekit-info-color: var(--teal);
+  --sn-stylekit-success-color: var(--success);
+  --sn-stylekit-warning-color: var(--warning);
+  --sn-stylekit-danger-color: var(--danger);
+  --sn-desktop-titlebar-bg-color: var(--void-2);
+  --sn-desktop-titlebar-border-color: var(--border);
+  --sn-stylekit-scrollbar-thumb-color: #484978;
+}
+
+/* App chrome */
+html, body, .app-root, .sn-root {
+  background: var(--void-4) !important;
+  color: var(--ink) !important;
+}
+
+/* Left nav + list */
+#title-bar, .sn-title-bar, .window-controls,
+.pane, .component, .navigation-panel, .notes-panel,
+.editor-pane, .split, .split-view {
+  background: var(--void-3) !important;
+  color: var(--ink) !important;
+  border-color: var(--border) !important;
+}
+
+/* List rows */
+.items-column .list-item,
+.items-column .list-item:hover,
+.items-column .list-item.selected {
+  background: var(--void-2) !important;
+  border: 1px solid var(--border) !important;
+}
+.items-column .list-item.selected { border-left: 3px solid var(--magenta) !important; }
+
+/* Editor area */
+.editor, .container, .sheet, .card, .modal, .editor > .editor {
+  background: var(--void-2) !important;
+  color: var(--ink) !important;
+  border-color: var(--border) !important;
+}
+
+/* Toolbar + buttons */
+.toolbar, .menubar, .menu, .dropdown, .dropdown-menu, .context-menu {
+  background: var(--void-1) !important;
+  border-color: var(--border) !important;
+}
+.button, .sk-button, .btn, .tag, .pill, .label {
+  background: linear-gradient(96deg, var(--magenta), var(--teal)) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+.button:hover { filter: brightness(1.05); }
+
+/* Inputs */
+input, textarea, select, .editor .cm-editor, .cm-editor {
+  background: var(--void-3) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Tags/badges */
+a.link, .tag, .pill, .label, .badge {
+  color: #fff !important;
+  background: var(--magenta) !important;
+}
+a.link:hover { background: var(--teal) !important; }
+
+/* Sheets (secure spreadsheets) – header row contrast */
+.secure-spreadsheet .k-spreadsheet {
+  --kendo-color-primary: var(--magenta);
+}
+.secure-spreadsheet .k-spreadsheet .k-cell.k-header {
+  background: var(--void-1) !important;
+  color: var(--ink) !important;
+}
